@@ -14,8 +14,6 @@ export const PokemonDetailsModal = () => {
 
   const { loading, pokemon } = useGetSinglePokemon(id, name);
 
-  console.log({loading, pokemon})
-
   const handleClose = () => {
     navigate('/pokemon');
   };
@@ -38,7 +36,7 @@ export const PokemonDetailsModal = () => {
         className={classes.modal}
         loading={loading}
         open
-        onCancel={() => handleClose()}
+        onCancel={handleClose}
       >
         {pokemon && <div className={classes.modalContent}>
           <img
